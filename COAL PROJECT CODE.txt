@@ -1,0 +1,76 @@
+
+char input;
+#define relay1 2 //Connect relay1 to pin 9
+#define relay2 3 //Connect relay2 to pin 8
+#define relay3 4 //Connect relay3 to pin 7
+#define relay4 5 //Connect relay4 to pin 6
+#define relay5 6 //Connect relay5 to pin 5
+#define relay6 7 //Connect relay6 to pin 4
+#define relay7 8 //Connect relay7 to pin 3
+#define relay8 9 //Connect relay8 to pin 2
+
+void setup() {
+  // put your setup code here, to run once:
+
+  Serial.begin(9600); //Set rate for communicating with phone
+pinMode(relay1, OUTPUT); //Set relay1 as an output
+pinMode(relay2, OUTPUT); //Set relay2 as an output
+pinMode(relay3, OUTPUT); //Set relay1 as an output
+pinMode(relay4, OUTPUT); //Set relay2 as an output
+pinMode(relay5, OUTPUT); //Set relay1 as an output
+pinMode(relay6, OUTPUT); //Set relay2 as an output
+pinMode(relay7, OUTPUT); //Set relay1 as an output
+pinMode(relay8, OUTPUT); //Set relay2 as an output
+digitalWrite(relay1, LOW); //Switch relay1 off
+digitalWrite(relay2, LOW); //Swtich relay2 off
+digitalWrite(relay3, LOW); //Switch relay1 off
+digitalWrite(relay4, LOW); //Swtich relay2 off
+digitalWrite(relay5, LOW); //Switch relay1 off
+digitalWrite(relay6, LOW); //Swtich relay2 off
+digitalWrite(relay7, LOW); //Switch relay1 off
+digitalWrite(relay8, LOW); //Swtich relay2 off
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ if(Serial.available()>0)
+ {
+  input=Serial.read();
+  Serial.print(input);
+  
+  
+  if(input=='A')
+  {digitalWrite(relay1,LOW);}
+   else if(input=='a')
+   {digitalWrite(relay1,HIGH);}
+    else if(input=='B')
+   {digitalWrite(relay2,LOW);}
+     else if(input=='b')
+   {digitalWrite(relay2,HIGH);}
+    else if(input=='C')
+   {digitalWrite(relay3,LOW);}
+     else if(input=='c')
+   {digitalWrite(relay3,HIGH);}
+       else if(input=='D')
+   {digitalWrite(relay4,LOW);}
+    else if(input=='d')
+   {digitalWrite(relay4,HIGH);}
+        else if(input=='E')
+   {digitalWrite(relay5,LOW);}
+     else if(input=='e')
+   {digitalWrite(relay5,HIGH);}
+       else if(input=='F')
+   {digitalWrite(relay6,LOW);}
+      else if(input=='f')
+   {digitalWrite(relay6,HIGH);}
+        else if(input=='G')
+   {digitalWrite(relay7,LOW);}
+        else if(input=='g')
+   {digitalWrite(relay7,HIGH);}
+        else if(input=='H')
+   {digitalWrite(relay8,LOW);}
+      else if(input=='h')
+   {digitalWrite(relay8,HIGH);}
+  }
+}
